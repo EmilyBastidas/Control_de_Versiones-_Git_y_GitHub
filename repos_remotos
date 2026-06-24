@@ -1,0 +1,308 @@
+# Repositorios Remotos
+
+Los repositorios remotos son versiones de un proyecto almacenadas en Internet, normalmente en plataformas como GitHub.
+
+Permiten:
+
+- Guardar copias de seguridad del proyecto.
+- Compartir código.
+- Colaborar con otros desarrolladores.
+- Sincronizar cambios entre distintos equipos.
+
+---
+
+## git remote add origin
+
+Conecta un repositorio local con un repositorio remoto.
+
+```bash
+git remote add origin https://github.com/usuario/repositorio.git
+```
+
+### ¿Qué significa?
+
+```text
+remote
+↓
+Repositorio remoto
+
+origin
+↓
+Nombre por defecto del repositorio remoto
+```
+
+---
+
+### Ver repositorios remotos configurados
+
+```bash
+git remote -v
+```
+
+Resultado:
+
+```text
+origin  https://github.com/usuario/repositorio.git (fetch)
+origin  https://github.com/usuario/repositorio.git (push)
+```
+
+### PDT
+
+Normalmente este comando se ejecuta una sola vez por proyecto.
+
+---
+
+## git push
+
+Envía los commits locales al repositorio remoto.
+
+```bash
+git push origin main
+```
+
+### ¿Qué ocurre?
+
+```text
+Repositorio Local
+↓
+git push
+↓
+GitHub
+```
+
+Los cambios guardados mediante commits se suben al repositorio remoto.
+
+---
+
+### Primer push de un proyecto
+
+```bash
+git push -u origin main
+```
+
+El parámetro:
+
+```text
+-u
+```
+
+establece una conexión entre la rama local y la rama remota.
+
+Después podrás usar simplemente:
+
+```bash
+git push
+```
+
+---
+
+### PDT
+
+Si olvidaste hacer commit:
+
+```bash
+git push
+```
+
+no tendrá nada nuevo que subir.
+
+---
+
+## git pull
+
+Descarga y fusiona los cambios del repositorio remoto.
+
+```bash
+git pull origin main
+```
+
+### ¿Qué ocurre?
+
+```text
+GitHub
+↓
+git pull
+↓
+Repositorio Local
+```
+
+Obtienes los cambios más recientes.
+
+---
+
+### ¿Cuándo usarlo?
+
+Antes de comenzar a trabajar en proyectos compartidos.
+
+```bash
+git pull
+```
+
+Así evitas trabajar sobre una versión desactualizada.
+
+---
+
+### PDT
+
+Antes de hacer cambios en un proyecto colaborativo:
+
+```bash
+git pull
+```
+
+---
+
+## git clone
+
+Copia un repositorio remoto completo a tu computadora.
+
+```bash
+git clone https://github.com/usuario/repositorio.git
+```
+
+Resultado:
+
+```text
+Se descarga una carpeta
+↓
+Con todos los archivos
+↓
+Y todo el historial Git
+```
+
+---
+
+### Ejemplo
+
+```bash
+git clone https://github.com/octocat/Hello-World.git
+```
+
+---
+
+### ¿Qué incluye?
+
+- Archivos del proyecto.
+- Historial de commits.
+- Ramas.
+- Configuración remota.
+
+---
+
+### PDT
+
+Después de clonar un repositorio no necesitas ejecutar:
+
+```bash
+git init
+```
+
+porque ya es un repositorio Git.
+
+---
+
+## Flujo de trabajo típico
+
+### Crear un proyecto nuevo
+
+```bash
+git init
+
+git add .
+
+git commit -m "Primer commit"
+
+git remote add origin URL
+
+git push -u origin main
+```
+
+---
+
+### Trabajar en un proyecto existente
+
+```bash
+git pull
+
+git add .
+
+git commit -m "Actualización"
+
+git push
+```
+
+---
+
+### Descargar un proyecto existente
+
+```bash
+git clone URL
+```
+
+---
+
+## Resumen
+
+### Conectar repositorio remoto
+
+```bash
+git remote add origin URL
+```
+
+---
+
+### Ver repositorios remotos
+
+```bash
+git remote -v
+```
+
+---
+
+### Subir cambios
+
+```bash
+git push origin main
+```
+
+---
+
+### Descargar cambios
+
+```bash
+git pull origin main
+```
+
+---
+
+### Clonar repositorio
+
+```bash
+git clone URL
+```
+
+---
+
+## PDT Personal
+
+Piensa en GitHub como una nube para tus proyectos.
+
+```text
+git push
+↓
+Subir cambios
+
+git pull
+↓
+Bajar cambios
+
+git clone
+↓
+Copiar proyecto
+
+git remote add origin
+↓
+Conectar proyecto local con GitHub
+```
+
+Este flujo representa gran parte del trabajo diario con Git y GitHub.
