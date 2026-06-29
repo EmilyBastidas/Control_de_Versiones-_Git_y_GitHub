@@ -72,7 +72,7 @@ Aquí recopilo apuntes, conceptos, comandos y ejercicios para comprender cómo g
 ## Progreso
 
 - [x ] Fundamentos de Git
-- [ ] Repositorios
+- [ x] Repositorios
 - [ ] Commits
 - [ ] Historial
 - [ ] Repositorios remotos
